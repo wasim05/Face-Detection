@@ -1,0 +1,28 @@
+ to get into virtul environment
+
+pi@pi:~ $ cd .virtualenvs/cv/bin/
+pi@pi:~/.virtualenvs/cv/bin $ source activate
+(cv) pi@pi:~/.virtualenvs/cv/bin $ python proj_faces.py party.jpg 
+python: can't open file 'proj_faces.py': [Errno 2] No such file or directory
+(cv) pi@pi:~/.virtualenvs/cv/bin $ cd
+(cv) pi@pi:~ $ cd face_detection/
+(cv) pi@pi:~/face_detection $ python proj_faces.py party.jpg 
+
+
+Display virtual env Packages
+
+(cv) pi@pi:~/.virtualenvs/cv/lib/python2.7 $ cd site-packages/
+(cv) pi@pi:~/.virtualenvs/cv/lib/python2.7/site-packages $ ls
+
+(cv) pi@pi:~/face_detection $ ls
+face_detect.py  party.jpg  shape_predictor_68_face_landmarks.dat.bz2
+face_lm.py      README.md
+
+Loading shape predictor and extracting
+
+(cv) pi@pi:~/face_detection $ wget http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2
+
+pi@pi:~/face_detection $ bzip2 -d shape_predictor_68_face_landmarks.dat.bz2 
+pi@pi:~/face_detection $ python face_lm.py party.jpg 
+
+pi@pi:~/face_detection $ git pull
